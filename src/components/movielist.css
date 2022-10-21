@@ -1,6 +1,10 @@
 .movielist{
+    width: 100vw;
     display: flex;
-    gap: 20px;
-    padding-left: 20px;
+    flex-wrap: wrap;
+    gap: 1vw;
+    padding-left: 1vw;
     padding-bottom: 20px;
+    padding-top: 20px;
+    overflow: hidden;
 }

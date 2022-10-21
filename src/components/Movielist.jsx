@@ -11,7 +11,6 @@ import'./movielist.css'
 const Movielist = () => {
   return (
     <div className='movielist'>
-
         {Data.map((el)=> <Moviecard name={el.name} description={el.description} posterUrl={el.posterUrl} rate={el.rate}/>)}
     </div>
   )

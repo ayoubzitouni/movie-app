@@ -1,5 +1,5 @@
 .movieCard{
-    width: 20vw;
+    width: 24vw;
     height: calc((20vw / 3)*2);
     overflow: hidden;
     border-radius: 10px;
