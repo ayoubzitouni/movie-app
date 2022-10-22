@@ -1,6 +1,9 @@
+:root{
+    --cardwidth: calc(((100vw - (1vw * 6)) / 4 ));
+}
 .movieCard{
-    width: 24vw;
-    height: calc((20vw / 3)*2);
+    width: var(--cardwidth);
+    height: calc((var(--cardwidth) / 3)*2);
     overflow: hidden;
     border-radius: 10px;
     position: relative;

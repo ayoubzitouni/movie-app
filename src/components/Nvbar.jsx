@@ -14,9 +14,9 @@ const Nvbar = () => {
           <Navbar.Brand href="#home">
             Freeflix
           </Navbar.Brand>
-          <Navbar.Text>
+          <Navbar.Brand>
             Filter
-          </Navbar.Text>
+          </Navbar.Brand>
           <Navbar.Brand>
             Add a film
           </Navbar.Brand>

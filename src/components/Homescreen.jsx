@@ -1,25 +1,31 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Carousel } from 'react-bootstrap'
 import Data from './data'
+import './Homescreen.css'
+
+
+
 
 const Homescreen = () => {
+
   return (
-    <div>
-        {Data.map((el)=><Carousel>
-      <Carousel.Item>
+    <div className='home'>
+      <Carousel>
+        {Data.map((el)=>
+      <Carousel.Item className='item'>
         <img
           className="d-block w-100"
           src={el.posterUrl}
         />
         <Carousel.Caption>
-          <h3>First slide label</h3>
+          <h3>{el.name}</h3>
           <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
         </Carousel.Caption>
       </Carousel.Item>)
-      </Carousel>)
       }
+    </Carousel>
     
-      
+    
     </div>
   )
 }

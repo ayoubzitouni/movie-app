@@ -7,15 +7,15 @@ import './moviecard.css'
 
 
 
-const Moviecard = (props) => {
+const Moviecard = (movie) => {
   return (
     <div className='movieCard'>
-        <img src={props.posterUrl} alt={`${props.name} poster`} className="posterImg" />
+        <img src={movie.posterUrl} alt={`${movie.name} poster`} className="posterImg" />
         <div className="cardContent">
-        <h1>{props.name}</h1>
-        <p>{props.description}</p>
+        <h1>{movie.name}</h1>
+        <p>{movie.description}</p>
         <div className="rate">
-          Rate: {props.rate}
+          Rate: {movie.rate}
         </div>
         </div>
     </div>
