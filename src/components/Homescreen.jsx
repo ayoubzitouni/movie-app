@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Carousel } from 'react-bootstrap'
 import Data from './data'
 import './Homescreen.css'
@@ -16,6 +16,7 @@ const Homescreen = () => {
         <img
           className="d-block w-100"
           src={el.posterUrl}
+          alt="1"
         />
         <Carousel.Caption>
           <h3>{el.name}</h3>

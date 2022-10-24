@@ -1,9 +1,3 @@
-
-
-
-
-
-
 const data=[
     {
     name:"Joker",

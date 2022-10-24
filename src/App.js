@@ -1,4 +1,3 @@
-import Moviecard from './components/Moviecard'
 import MovieList from'./components/Movielist'
 import Nbar from'./components/Nvbar'
 import Hscreen from './components/Homescreen'
