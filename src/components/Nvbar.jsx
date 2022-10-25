@@ -1,32 +1,20 @@
 import React, { useState } from 'react'
 import { Button, Container, Modal, Navbar } from 'react-bootstrap'
-
-
-const Nvbar = ({addFilm}) => {
-
-
+const Nvbar = ({addfilm}) => {
   const [show,setShow]=useState(false)
   const [fname,setFname]=useState('')
   const [desc,setDesc]=useState('')
   const [fpost,setFpost]=useState('')
-  const [frt,setFrt]=useState("")
-
-
+  const [frt,setFrt]=useState(0)
 const Toggle=()=>{
 setShow(!show);
 }
 const Check=()=>{
-if(fname!="" && desc!="" && /^\d+$/.test(frt) && /https?:\/\/.*\.(?:png|jpg)/.test(fpost)){
+if(fname!="" && desc!="" && /^\d+(-\d+)?(,\d+(-\d+)?)*$/.test(frt) && fpost!=""){
   Add()
-  console.log(fpost)
-  Toggle()
-  setDesc("")
-  setFname("")
-  setFpost("")
-  setFrt("")
   console.log("done")
 }else {console.log("not done")}
-
+Toggle()
 }
 const Add=()=>{
   let newfilm={
@@ -35,7 +23,7 @@ const Add=()=>{
     rate:frt,
     posterUrl:fpost
   }
-  addFilm(newfilm)
+  addfilm(newfilm)
   
 }
 
@@ -71,8 +59,12 @@ const Add=()=>{
                 <input type="search" name="frt" id="frt" onChange={(frt)=>setFrt(frt.target.value)}/>
               </Modal.Body>
               <Modal.Footer>
-                <Button variant="secondary" onClick={Toggle}>Close</Button>
-                <Button variant="primary" onClick={Check}>Add the film</Button>
+                <Button variant="secondary" onClick={Toggle}>
+                  Close
+                </Button>
+               <Button variant="primary" onClick={Check}>
+                  Add film
+               </Button>
               </Modal.Footer>
             </Modal>
             

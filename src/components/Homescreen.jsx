@@ -1,17 +1,16 @@
 import React from 'react'
 import { Carousel } from 'react-bootstrap'
-import Data from './data'
 import './Homescreen.css'
 
 
 
 
-const Homescreen = () => {
+const Homescreen = ({movies}) => {
 
   return (
     <div className='home'>
       <Carousel>
-        {Data.map((el)=>
+        {movies.map((el)=>
       <Carousel.Item className='item'>
         <img
           className="d-block w-100"

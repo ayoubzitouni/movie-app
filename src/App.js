@@ -3,22 +3,23 @@ import Nbar from'./components/Nvbar'
 import Hscreen from './components/Homescreen'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
-import Data from './components/data';
 import { useState } from 'react';
-function App() {
-  const [film,setFilm]=useState(Data)
-  const addFilm=(newfilm)=>{
-    
-    setFilm([...film,newfilm])
-    console.log(film)
-    console.log(Data)
+import Data from './components/data';
 
+
+function App() {
+  const [nfilm,setNfilm]=useState(Data)
+  const addFilm=(newfilm)=>{
+    setNfilm([...nfilm,newfilm])
+    
+    console.log(nfilm)
+    console.log(Data)
   }
   return (
     <div className="App">
-      <Nbar addFilm={addFilm}/>
-      <Hscreen className="homescreen"/>
-      <MovieList className="movielist" />
+      <Nbar addfilm={addFilm}/>
+      <Hscreen className="homescreen" movies={nfilm}/>
+      <MovieList className="movielist"  movies={nfilm}/>
     </div>
   );
 }

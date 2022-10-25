@@ -25,6 +25,11 @@
     opacity: 0;
     transition: all 0.5s ease-in-out;
 }
+.movieCard .cardContent p{ 
+    max-width: 100%;
+    min-height: 2vh;
+    overflow: hidden;
+}
 .movieCard:hover .cardContent{
     bottom: 0;
     opacity: 1;

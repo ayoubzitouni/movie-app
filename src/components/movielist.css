@@ -9,14 +9,15 @@
     overflow: hidden;
 }
 .movielist .search{
+    margin-top: 1rem;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     width: 100%;
-    align-items: center;
+    align-items:center;
     position: relative;
 }
 .movielist .searchInput{
-    margin-top: 1rem;
+    
     width: 2rem;
     height: 2rem;
     border-radius: 2rem;
