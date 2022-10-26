@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 import { Button, Container, Modal, Navbar } from 'react-bootstrap'
-const Nvbar = ({addfilm}) => {
+import ReactStars from 'react-stars'
+import { render } from 'react-dom'
+
+const Nvbar = ({addfilm,searchRate}) => {
   const [show,setShow]=useState(false)
   const [fname,setFname]=useState('')
   const [desc,setDesc]=useState('')
@@ -27,6 +30,7 @@ const Add=()=>{
   
 }
 
+
   return (
     <div>
         <Navbar bg="dark" variant="dark">
@@ -34,6 +38,11 @@ const Add=()=>{
           <Navbar.Brand href="#home">
             Freeflix
           </Navbar.Brand>
+          <ReactStars
+          count={5}
+          onChange={searchRate}
+          size={24}
+          color2={'#ffd700'} />
           <Navbar.Brand>
             <Button onClick={Toggle}>Add a film
             </Button>

@@ -5,7 +5,7 @@ import'./movielist.css'
 
 
 
-const Movielist = ({movies}) => {
+const Movielist = ({movies,rate}) => {
   const [input,setInput] = useState('')
   const [grlow,setGrlow]= useState(0)
   const Input = (e) => {
@@ -28,8 +28,7 @@ const Movielist = ({movies}) => {
             </Dropdown.Menu>
           </Dropdown>
         </div>
-        {grlow==1?movies.sort((a,b)=>b.rate-a.rate).map((el)=> <Moviecard name={el.name} rate={el.rate} description={el.description} posterUrl={el.posterUrl}/>):grlow==2?movies.sort((a,b)=>b.name-b.name).map((el)=> <Moviecard name={el.name} rate={el.rate} description={el.description} posterUrl={el.posterUrl}/>):grlow==3?movies.sort((a,b)=>a.rate-b.rate).map((el)=> <Moviecard name={el.name} rate={el.rate} description={el.description} posterUrl={el.posterUrl}/>):null}
-        {/* {movies.filter((x)=> x.name.toLowerCase().includes(input.toLowerCase().trim())).map((el)=> <Moviecard name={el.name} rate={el.rate} description={el.description} posterUrl={el.posterUrl}/>)} */}
+        {movies.sort((a,b)=> grlow==1? b.rate-a.rate:grlow==2?a.rate-b.rate:grlow==3? a.name-b.name:null).filter((x)=>  x.rate>=rate && x.name.toLowerCase().includes(input.toLowerCase().trim())).map((el)=> <Moviecard name={el.name} rate={el.rate} description={el.description} posterUrl={el.posterUrl}/>)}
     </div>
   )
 }

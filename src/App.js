@@ -7,19 +7,27 @@ import { useState } from 'react';
 import Data from './components/data';
 
 
+
 function App() {
   const [nfilm,setNfilm]=useState(Data)
+  const [srate,setSrate]=useState(0)
   const addFilm=(newfilm)=>{
     setNfilm([...nfilm,newfilm])
     
     console.log(nfilm)
     console.log(Data)
   }
+  const searchR=(e)=>{
+    
+    setSrate(e)
+    console.log(srate)
+  }
+
   return (
     <div className="App">
-      <Nbar addfilm={addFilm}/>
+      <Nbar addfilm={addFilm} searchRate={searchR}/>
       <Hscreen className="homescreen" movies={nfilm}/>
-      <MovieList className="movielist"  movies={nfilm}/>
+      <MovieList className="movielist"  movies={nfilm} rate={srate}/>
     </div>
   );
 }

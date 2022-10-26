@@ -13,7 +13,7 @@ const Homescreen = ({movies}) => {
         {movies.map((el)=>
       <Carousel.Item className='item'>
         <img
-          className="d-block w-100"
+          className="d-block h-100 "
           src={el.posterUrl}
           alt="1"
         />
